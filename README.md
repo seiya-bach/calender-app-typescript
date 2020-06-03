@@ -1,15 +1,28 @@
-# カレンダーの環境構築
+# カレンダー(React)
+
+<img width="600" alt="スクリーンショット 2020-06-04 1 06 27" src="https://user-images.githubusercontent.com/8656346/83660734-22aa0500-a600-11ea-9ea8-1c89cc248df9.png">
+
+上部アイコンで翌月、先月に切替
+
+<img width="600" alt="スクリーンショット 2020-06-04 1 06 52" src="https://user-images.githubusercontent.com/8656346/83660855-5422d080-a600-11ea-96d0-65b504ceea36.png">
+
+Datepicker
+
+<img width="600" alt="スクリーンショット 2020-06-04 1 08 13" src="https://user-images.githubusercontent.com/8656346/83660942-6f8ddb80-a600-11ea-99d2-50ab65ab9d8e.png">
+
+CRUD
+
+<img width="600" alt="スクリーンショット 2020-06-04 1 07 40" src="https://user-images.githubusercontent.com/8656346/83661013-85030580-a600-11ea-8272-af21754ea371.png">
+
+<img width="457" alt="スクリーンショット 2020-06-04 1 13 57" src="https://user-images.githubusercontent.com/8656346/83661191-bb408500-a600-11ea-9e6c-fe02ff603245.png">
+
 
 ## セットアップ
-
-docker をインストールしたのちに、
 
 ```shell
 $ make
 ```
-
-これでもろもろインストールやビルドが終わります。`make`コマンドがない場合は、
-
+OR
 ```shell
 $ npm --prefix ./front install ./front
 $ npm --cwd ./front run build
@@ -17,33 +30,13 @@ $ npm --prefix ./server install ./server
 $ cp ./server/env/env-local ./server/.env
 ```
 
-の 4 つのコマンドを実行してください。
-
 ## サーバーの起動と停止
 
 ```shell
 $ docker-compose up -d
-```
-
-を実行すると[localhost:8080]()にサーバーが立ち上がります。最初はいろいろインストールするので時間がかかると思います。
-
-サーバーを止めたいときは、
-
-```shell
 $ docker-compose down
 ```
 
-と実行すれば ok です。
+## 今後
 
-API ドキュメントは[こちら](./server/README.md)
-
-## フロントの開発をするとき
-
-フロントは`webpack`でビルドしてやる必要があります。
-
-```shell
-$ cd front
-$ npm run watch
-```
-
-とすると、ファイルの変更を検知して自動で差分のビルドが走るようになります。自動でビルドされたものはすぐに docker 内の nginx が配信してくれるので、変更のたびに何かコマンドを打つ必要はありません。
+TypeScriptを導入し型を付けていく
