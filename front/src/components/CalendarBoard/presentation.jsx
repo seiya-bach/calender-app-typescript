@@ -21,8 +21,8 @@ const CarendarBoard = ({
   return (
     <div className={styles.container}>
       <GridList className={styles.grid} cols={7} spacing={0} cellHeight="auto">
-        {days.map((d) => (
-          <li key={d}>
+        {days.map((d, index) => (
+          <li key={index}>
             <Typography
               className={styles.days}
               color="textSecondary"
