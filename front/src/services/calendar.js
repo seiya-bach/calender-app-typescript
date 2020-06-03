@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 export const createCalendar = month => {
   const firstDay = getMonth(month);
   const firstDayIndex = firstDay.day();
-  return Array(36)
+  return Array(35)
     .fill(0)
     .map((_, i) => {
       const diffFromFirstDay = i - firstDayIndex;
